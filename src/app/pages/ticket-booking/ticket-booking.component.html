@@ -1,0 +1,33 @@
+<div class="booking-wrapper">
+  <h2>🎟️ Book Anime Movie Tickets</h2>
+
+  <form (ngSubmit)="bookTicket()" #form="ngForm">
+    <label>Movie:</label>
+    <select name="movie" [(ngModel)]="booking.movie" required>
+      <option *ngFor="let m of movies" [value]="m.title">{{ m.title }}</option>
+    </select>
+
+    <label>Date:</label>
+    <input type="date" name="date" [(ngModel)]="booking.date" required />
+
+    <label>Time Slot:</label>
+    <select name="time" [(ngModel)]="booking.time" required>
+      <option *ngFor="let t of timeSlots" [value]="t">{{ t }}</option>
+    </select>
+
+    <label>Tickets:</label>
+    <input type="number" name="tickets" [(ngModel)]="booking.tickets" min="1" required />
+
+    <label>Seat Type:</label>
+    <select name="seatType" [(ngModel)]="booking.seatType" required>
+      <option value="Regular">Regular</option>
+      <option value="Premium">Premium</option>
+    </select>
+
+    <button type="submit">Confirm Booking</button>
+  </form>
+</div>
+<button routerLink="/my-ticket" class="my-ticket-button">
+  🎫 View My Tickets
+</button>
+

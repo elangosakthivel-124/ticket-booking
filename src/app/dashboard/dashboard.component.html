@@ -1,0 +1,25 @@
+<div class="dashboard">
+  <h1>Welcome, Elango!</h1>
+  <p>This is your cinematic dashboard ✨</p>
+  <nav class="navbar">
+  <a routerLink="/" routerLinkActive="active">Home</a>
+  <a routerLink="/ticket-booking" routerLinkActive="active">Ticket Booking</a>
+  <a routerLink="/my-ticket" routerLinkActive="active">My Ticket</a>
+  <a routerLink="/about" routerLinkActive="active">About</a>
+  <button (click)="logout()" class="logout-button">Logout</button>
+</nav>
+<div class="hero-section">
+  <h1>🎬 Anime Movie Tickets</h1>
+  <p>Book your seat for the latest anime blockbusters!</p>
+  <a routerLink="/ticket-booking" class="cta-button">Book Now</a>
+</div>
+
+<div class="movie-grid">
+  <div class="movie-card" *ngFor="let movie of animeMovies">
+    <img [src]="movie.poster" alt="{{ movie.title }}" />
+    <h3>{{ movie.title }}</h3>
+    <p>{{ movie.description }}</p>
+    <a routerLink="/ticket-booking" class="book-link">Get Tickets</a>
+  </div>
+</div>
+</div>

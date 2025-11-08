@@ -1,0 +1,17 @@
+<div class="ticket-list">
+  <h2>🎫 My Booked Tickets</h2>
+
+  <div *ngIf="tickets.length === 0">No tickets booked yet.</div>
+
+  <div class="ticket-card" *ngFor="let ticket of tickets">
+    <h3>{{ ticket.movie }}</h3>
+    <p>Date: {{ ticket.date }}</p>
+    <p>Time: {{ ticket.time }}</p>
+    <p>Tickets: {{ ticket.tickets }}</p>
+    <p>Seat Type: {{ ticket.seatType }}</p>
+  </div>
+  <div>
+    <br>
+  <button routerLink="/dashboard" class="home button">Home</button>
+  </div>
+</div>
